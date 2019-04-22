@@ -1,0 +1,1 @@
+/Users/kuwa/dotfiles/.vim

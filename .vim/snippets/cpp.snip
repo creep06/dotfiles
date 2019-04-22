@@ -1,0 +1,983 @@
+### TEMPLATE ###
+
+snippet cpp
+abbr C++ Competitive Template
+options head
+	#include <iostream>
+	#include <algorithm>
+	#include <bitset>
+	#include <map>
+	#include <queue>
+	#include <set>
+	#include <stack>
+	#include <string>
+	#include <utility>
+	#include <vector>
+	#include <complex>
+	#include <string.h>
+	#include <numeric>
+	using namespace std;
+
+	//#define int long long
+	#define reps(i,s,n) for(int (i)=(s);(i)<(n);++(i))
+	#define rep(i,n) reps(i,0,n)
+	#define rept(i,n) rep(i,(n)+1)
+	#define repst(i,s,n) reps(i,s,(n)+1)
+	#define reprt(i,n,t) for(int (i)=(n);(i)>=(t);--(i))
+	#define repr(i,n) reprt(i,n,0)
+	#define each(i,v) for(auto &(i):(v))
+	#define eachr(i,v) for(auto &(i)=(v).rbegin();(i)!=(v).rend();(i)++)
+	#define all(c) (c).begin(),(c).end()
+	#define rall(c) (c).rbegin(),(c).rend()
+	#define pb push_back
+	#define mp make_pair
+	#define fi first
+	#define se second
+	#define tmax(x,y,z) max(x,max(y,z))
+	#define tmin(x,y,z) min(x,min(y,z))
+	#define chmin(x,y) x=min(x,y)
+	#define chmax(x,y) x=max(x,y)
+	#define ln '\n'
+	#define bln(i,n) (((i)==(n)-1)?'\n':' ')
+	#define dbg(x) cout<<#x" = "<<(x)<<ln<<flush
+	#define dbga(x,n) {cout<<#x" : ";for(int (i)=0;i<(n);++i){cout<<((x)[i])<<(i==((n)-1)?'\n':' ')<<flush;}}
+	#define zero(a) memset(a,0,sizeof(a))
+	#define unq(a) sort(all(a)),a.erase(unique(all(a)),a.end())
+	#define endl "\n"
+
+	//typedef complex<double> P;
+	typedef long long ll;
+	typedef pair<int,int> pii;
+	typedef pair<ll,ll> pll;
+	typedef vector<int> vi;
+	typedef vector<ll> vl;
+	typedef vector<string> vst;
+	typedef vector<pii> vpii;
+	typedef vector<pll> vpll;
+	typedef vector<vector<int> > mat;
+
+	const ll inf = (ll)1e9+10;
+	const ll linf = (ll)1e18+10;
+	const ll mod = (ll)(1e9+7);
+	const int dx[] = {0, 1, 0, -1};
+	const int dy[] = {1, 0, -1, 0};
+	const int ddx[] = {0, 1, 1, 1, 0, -1, -1, -1};
+	const int ddy[] = {1, 1, 0, -1, -1, -1, 0, 1};
+	const double eps = 1e-10;
+
+	ll mop(ll a,ll b,ll m=mod) {ll r=1;a%=m;for(;b;b>>=1){if(b&1)r=r*a%m;a=a*a%m;}return r;}
+	ll gcd(ll a,ll b) {return b?gcd(b,a%b):a;}
+	ll lcm(ll a,ll b) {return a/gcd(a,b)*b;}
+	bool ool(int x,int y,int h,int w) {return((x<0)||(h<=x)||(y<0)||(w<=y));}
+	bool deq(double a,double b) {return abs(a-b)<eps;}
+
+	struct oreno_initializer {
+		oreno_initializer() {
+			cin.tie(0);
+			ios::sync_with_stdio(0);
+		}
+	} oreno_initializer;
+
+
+
+	${0}
+
+	signed main() {
+
+	}
+
+snippet cpps
+abbr CPP Template Simple
+options head
+	#include <iostream>
+	#include <algorithm>
+	#include <bitset>
+	#include <map>
+	#include <queue>
+	#include <set>
+	#include <stack>
+	#include <string>
+	#include <utility>
+	#include <vector>
+	#include <complex>
+	#include <string.h>
+	#include <numeric>
+	using namespace std;
+
+	//#define int long long
+	#define reps(i,s,n) for(int (i)=(s);(i)<(n);++(i))
+	#define rep(i,n) reps(i,0,n)
+	#define each(i,v) for(auto &(i):(v))
+	#define all(c) (c).begin(),(c).end()
+	#define chmin(x,y) x=min(x,y)
+	#define chmax(x,y) x=max(x,y)
+	#define bln(i,n) (((i)==(n)-1)?'\n':' ')
+	#define unq(a) sort(all(a)),a.erase(unique(all(a)),a.end())
+
+	//typedef complex<double> P;
+	typedef long long ll;
+
+	const ll inf = (ll)1e9+10;
+	const ll linf = (ll)1e18+10;
+	const ll mod = (ll)(1e9+7);
+	const int dx[] = {0, 1, 0, -1};
+	const int dy[] = {1, 0, -1, 0};
+	const double eps = 1e-10;
+
+	ll mop(ll a,ll b,ll m=mod) {ll r=1;a%=m;for(;b;b>>=1){if(b&1)r=r*a%m;a=a*a%m;}return r;}
+	ll gcd(ll a,ll b) {return b?gcd(b,a%b):a;}
+	ll lcm(ll a,ll b) {return a/gcd(a,b)*b;}
+	bool ool(int x,int y,int h,int w) {return((x<0)||(h<=x)||(y<0)||(w<=y));}
+	bool deq(double a,double b) {return abs(a-b)<eps;}
+
+	struct oreno_initializer {
+		oreno_initializer() {
+			cin.tie(0);
+			ios::sync_with_stdio(0);
+		}
+	} oreno_initializer;
+
+
+
+	${0}
+
+	signed main() {
+
+	}
+
+
+
+### STRUCTURE ###
+
+snippet btrie
+abbr Trie (binary)
+options head
+	// 2進数専用のTrie木 宣言はBTrie<Type> bt;みたいな感じで
+	template<typename V> struct BTrie {
+		private:
+		static const int bit = 30, N = 300300, S = bit*N;
+		public:
+		V go[S][2],cnt[S],m;
+		BTrie() {newNode();}
+		V newNode() {go[m][0]=go[m][1]=-1; return m++;}
+		void add(V x) {
+			V v=0; cnt[v]++;
+			for (V i = bit - 1; i >= 0; i--) {
+				V y = (x>>i)&1;
+				if (go[v][y]==-1) go[v][y]=newNode();
+				v=go[v][y],cnt[v]++;
+			}
+		}
+		void del(V x) {
+			V v=0; cnt[v]--;
+			for (V i = bit - 1; i >= 0; i--) {
+				V y = (x >> i) & 1;
+				if (go[v][y]==-1) go[v][y]=newNode();
+				v=go[v][y],cnt[v]--;
+			}
+		}
+	};
+
+snippet ftree
+abbr Fenwick tree (BIT)
+options head
+	template<class T, int ME> class BIT {
+		public:
+		T bit[1<<ME],val[1<<ME];
+		T sum(int e) {T s=0;e++;while(e) s+=bit[e-1],e-=e&-e; return s;}
+		T add(int e,T v) { val[e++]+=v; while(e<=1<<ME) bit[e-1]+=v,e+=e&-e;}
+		T set(int e,T v) { add(e,v-val[e]);}
+		int lb(T v) {
+			T tv=0; int i,ent=0;
+			for(i=ME-1;i>=0;i--) if(tv+bit[ent+(1<<i)-1]<v) tv+=bit[ent+(1<<i)-1],ent+=(1<<i);
+			return ent;
+		}
+	};${0}
+
+snippet segrmq
+abbr Segment tree - ranged minimum query
+options head
+	// RMQ<型> rmq(サイズ);
+	template<typename V> struct RMQ {
+		private:
+		int n;
+		vector<V> node;
+		public:
+		explicit RMQ(int sz) {
+			n = 1;
+			while(n<sz) n *= 2;
+			node.resize(2*n-1, 1<<30);
+		}
+		void update(int x, V val) {
+			x += n-1, node[x]=val;
+			while (x>0) x = (x-1)/2, node[x] = min(node[2*x+1], node[2*x+2]);
+		}
+		V query(int a, int b, int k = 0, int l = 0, int r = -1) {
+			if (r<0) r = n;
+			if (r<=a || b<=l) return 1<<30;
+			if (a<=l && r<=b) return node[k];
+			return min(query(a,b,2*k+1,l,(l+r)/2), query(a,b,2*k+2,(l+r)/2,r));
+		}
+	};${0}
+
+snippet spar
+abbr Sparse table 1D
+options head
+	template<typename V> struct SPA {
+		private:
+		vector<vector<V> > sp;
+		public:
+		SPA(int sz) { sp = vector<vector<V> >(sz, vector<V>(30, (1<<31)-1));}
+		void init(int n, V a[]) {
+			for (int i = 0; i < n; ++i) sp[i][0] = a[i];
+			for (int k = 1; k < 30; ++k)
+				for (int i = 0; i < n-1; ++i)
+					if (i+(1<<(k-1))<n) sp[i][k] = min(sp[i][k-1], sp[i+(1<<(k-1))][k-1]);
+		}
+		V query(int l, int r) { // min [l,r)
+			int m = 0;
+			while (1<<(1+m)<=r-l) m++;
+			return min(sp[l][m], sp[r-(1<<m)][m]);
+		}
+	};${0}
+
+snippet spar2max
+abbr Sparse table 2D max
+options head
+	template<typename V> struct SPA {
+		private:
+		vector<vector<vector<vector<V> > > > sp;
+		public:
+		SPA(int h, int w) { sp = vector<vector<vector<vector<V> > > >(log2(h)+1, vector<vector<vector<V> > >(h, vector<vector<V> >(log2(w)+1, vector<V>(w, 0))));}
+		void update(int i, int j, V a) { sp[0][i][0][j] = a;}
+		void build() {
+			int h = sp[0].size(), w = sp[0][0][0].size(), ir, ic, jr, jc;
+			for (ir=0;ir<h;ir++) for (jc=1;jc<=log2(w);jc++) for (ic=0;ic+(1<<(jc-1))<w;ic++)
+				sp[0][ir][jc][ic] = max(sp[0][ir][jc-1][ic], sp[0][ir][jc-1][ic+(1<<(jc-1))]);
+			for (jr=1;jr<=log2(h);jr++) for (ir=0;ir+(1<<(jr-1))<h;ir++)
+				for (jc=0;jc<=log2(w);jc++)	for (ic=0;ic<w;ic++)
+					sp[jr][ir][jc][ic] = max(sp[jr-1][ir][jc][ic], sp[jr-1][ir+(1<<(jr-1))][jc][ic]);
+		}
+		V query(int xa, int ya, int xb, int yb) { // min
+			int kx = log2(xb-xa+1), ky = log2(yb-ya+1);
+			int max_R1 = max(sp[kx][xa][ky][ya], sp[kx][xa][ky][yb+1-(1<<ky)]);
+			int max_R2 = max(sp[kx][xb+1-(1<<kx)][ky][ya], sp[kx][xb+1-(1<<kx)][ky][yb+1-(1<<ky)]);
+			return max(max_R1, max_R2);
+		}
+	};${0}
+
+snippet spar2min
+abbr Sparse table 2D min
+options head
+	template<typename V> struct SPA {
+		private:
+		vector<vector<vector<vector<V> > > > sp;
+		public:
+		SPA(int h, int w) { sp = vector<vector<vector<vector<V> > > >(log2(h)+1, vector<vector<vector<V> > >(h, vector<vector<V> >(log2(w)+1, vector<V>(w, 1<<30))));}
+		void update(int i, int j, V a) { sp[0][i][0][j] = a;}
+		void build() {
+			int h = sp[0].size(), w = sp[0][0][0].size(), ir, ic, jr, jc;
+			for (ir=0;ir<h;ir++) for (jc=1;jc<=log2(w);jc++) for (ic=0;ic+(1<<(jc-1))<w;ic++)
+				sp[0][ir][jc][ic] = min(sp[0][ir][jc-1][ic], sp[0][ir][jc-1][ic+(1<<(jc-1))]);
+			for (jr=1;jr<=log2(h);jr++) for (ir=0;ir+(1<<(jr-1))<h;ir++)
+				for (jc=0;jc<=log2(w);jc++) for (ic=0;ic<w;ic++)
+					sp[jr][ir][jc][ic] = min(sp[jr-1][ir][jc][ic], sp[jr-1][ir+(1<<(jr-1))][jc][ic]);
+		}
+		V query(int xa, int ya, int xb, int yb) {
+			int kx = log2(xb-xa+1), ky = log2(yb-ya+1);
+			int min_R1 = min(sp[kx][xa][ky][ya], sp[kx][xa][ky][yb+1-(1<<ky)]);
+			int min_R2 = min(sp[kx][xb+1-(1<<kx)][ky][ya], sp[kx][xb+1-(1<<kx)][ky][yb+1-(1<<ky)]);
+			return min(min_R1, min_R2);
+		}
+	};${0}
+
+snippet unifis
+abbr Union-Find with Usize
+options head
+	struct UF {
+		vector<int> p;
+		UF(int n) : p(n, -1) {};
+		bool unite(int u, int v) {
+			if ((u = find(u)) == (v = find(v))) return false;
+			if (p[u] > p[v]) swap(u, v);
+			p[u] += p[v]; p[v] = u;
+			return true;
+		}
+		bool same(int u, int v) { return find(u) == find(v); }
+		int find(int u) { return p[u] < 0 ? u : p[u] = find(p[u]); }
+		int usize(int u) { return -p[find(u)]; }
+	};${0}
+
+snippet unifi
+abbr Union-Find
+options head
+	struct UF {vector<int> par;
+		UF(int NV) { par.clear(); rep(i,NV) par.push_back(i); }
+		void reset() { rep(i,par.size()) par[i] = i; }
+		int operator[](int x) { return par[x] == x ? x : par[x] = operator[](par[x]); }
+		void operator()(int x, int y) {x = operator[](x); y = operator[](y);if (x != y) par[x] = y;}
+	};${0}
+
+
+
+### GRAPH ###
+
+snippet beru
+abbr BellmanFord
+options head
+	// sからtに辿り着くまでに閉路が存在すればtrueを返す
+	// グラフに閉路が存在してもそこを経由できない場合は閉路を検出しない
+	bool bford(int n, pair<int,pair<int,int> > *e, int *d, int s, int t = -1) {
+		fill(d, d+n, inf), d[s] = 0;
+		for (int i = 0; i < n*2; ++i) for (int j = 0; j < m; ++j) {
+			int from = e[j].first, to = e[j].second.first, cost = e[j].second.second;
+			if(d[from]!=inf && d[to]>d[from]+cost){
+				d[to] = d[from] + cost;
+				if(to==t && n-1<=i) return 1;
+			}
+		}
+		return 0;
+	}${0}
+
+snippet daiku
+abbr Dijkstra (normal)
+options head
+	void dijkstra(int n, vector<pair<int,int>> e[], int d[], int s) {
+		priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> que;
+		fill(d, d+n, inf), d[s] = 0;
+		que.push({0,s});
+		while(!que.empty()) {
+			int v = que.top().second, dis = que.top().first; que.pop();
+			if (d[v]<dis) continue;
+			for (int i = 0; i < e[v].size(); ++i) {
+				int to = e[v][i].first, cost = e[v][i].second;
+				if (d[to] > d[v] + cost) {
+					d[to] = d[v] + cost;
+					que.push({d[to], to});
+				}
+			}
+		}
+	}${0}
+
+snippet daikus
+abbr Dijkstra with Struct
+options head
+	struct S {
+		int v, c;
+		S(int vv, int cc) {v = vv, c = cc;}
+		bool operator > (const S &e) const {return c > e.c;}
+	};
+
+	void dijkstra(int n, vector<S> e[], int d[], int s) {
+		priority_queue<S, vector<S>, greater<S> > que;
+		fill(d, d+n, inf), d[s] = 0;
+		que.push(S(s,0));
+		while(!que.empty()) {
+			S p = que.top(); que.pop();
+			int v = p.v, dis = p.c;
+			if (d[v] < dis) continue;
+			for (int i = 0; i < e[v].size(); ++i) {
+				S q = e[v][i];
+				int u = q.v, cost = q.c;
+				if (d[u] > d[v] + cost) {
+					d[u] = d[v] + cost;
+					que.push(S(u, d[u]));
+				}
+			}
+		}
+	}${0}
+
+snippet ford
+abbr FordFulkerson
+options head
+	const int MAXV = 123;
+	class FordFulkerson {
+		private:
+		struct edge {int to, cap, rev;};
+		vector<edge> g[MAXV];
+		bool used[MAXV];
+		public:
+		// fromからtoへ向かう容量capの辺をグラフに追加する
+		void add_edge(int from, int to, int cap) {
+			g[from].push_back((edge){to, cap, (int)g[to].size()});
+			g[to].push_back((edge){from, 0, (int)g[from].size()-1});
+		}
+		// 増加パスをdfsで探す
+		int dfs(int v, int t, int f) {
+			if (v==t) return f;
+			used[v] = true;
+			for (int i = 0; i < g[v].size(); ++i) {
+				edge &e = g[v][i];
+				if (!used[e.to] && e.cap>0) {
+					int d = dfs(e.to, t, min(f,e.cap));
+					if (d>0) {
+						e.cap -= d;
+						g[e.to][e.rev].cap += d;
+						return d;
+					}
+				}
+			}
+			return 0;
+		}
+		// sからtへの最大流を求める
+		int getflow(int s, int t) {
+			int flow = 0;
+			while (true) {
+				memset(used,0,sizeof(used));
+				int f = dfs(s,t,(int)1e9+10);
+				if (f==0) return flow;
+				flow += f;
+			}
+		}
+	};${0}
+
+snippet dini
+abbr Dinic
+options head
+	const int MAXV = 123;
+	class Dinic {
+	private:
+		struct edge {int to, cap, rev;};
+		vector<edge> g[MAXV];
+		int level[MAXV], iter[MAXV];
+	public:
+		// fromからtoへ向かう容量capの辺をグラフに追加する
+		void add_edge(int from, int to, int cap) {
+			g[from].push_back((edge){to, cap, (int)g[to].size()});
+			g[to].push_back((edge){from, 0, (int)g[from].size()-1});
+		}
+		// sからの最短距離をBFSで計算
+		void bfs(int s) {
+			memset(level, -1, sizeof(level));
+			queue<int> que;
+			level[s] = 0;
+			que.push(s);
+			while (!que.empty()) {
+				int v = que.front(); que.pop();
+				for (int i = 0; i < g[v].size(); i++) {
+					edge &e = g[v][i];
+					if (e.cap>0 && level[e.to]<0) {
+						level[e.to] = level[v] + 1;
+						que.push(e.to);
+					}
+				}
+			}
+		}
+		// 増加パスをdfsで探す
+		int dfs(int v, int t, int f) {
+			if (v==t) return f;
+		for (int &i = iter[v]; i < g[v].size(); ++i) {
+				edge &e = g[v][i];
+				if (e.cap>0 && level[v]<level[e.to]) {
+					int d = dfs(e.to, t, min(f, e.cap));
+					if (d>0) {
+						e.cap -= d;
+						g[e.to][e.rev].cap += d;
+						return d;
+					}
+				}
+			}
+			return 0;
+		}
+		// sからtへの最大流を求める
+		int getflow(int s, int t) {
+			int flow = 0;
+			while (1) {
+				bfs(s);
+				if (level[t]<0) return flow;
+				memset(iter, 0, sizeof(iter));
+				int f;
+				while ((f=dfs(s, t, inf))>0) flow += f;
+			}
+		}
+	};
+
+snippet kahn
+abbr Kahn's Algorithm (Topological Sort)
+options head
+	// トポロジカルソート 閉路はシカト O(VE)
+	vector<int> tsort(int n, vector<int> *e) {
+		stack<int> st;
+		int ny[n] = {};
+		for (int i=0; i<n; ++i) for (auto j:e[i]) ny[j]++;
+		for (int i=0; i<n; ++i) if (ny[i]==0) st.push(i);
+		vector<int> res;
+		while (!st.empty()) {
+			int ne = st.top(); st.pop();
+			res.push_back(ne);
+			for (auto i:e[ne]) if (--ny[i]==0) st.push(i);
+		}
+		return res;
+	}${0}
+
+snippet kura
+abbr Kruskal's Algorithm
+options head
+	struct UF {
+		vector<int> p;
+		UF(int n) : p(n, -1) {};
+		bool unite(int u, int v) {
+			if ((u = find(u)) == (v = find(v))) return false;
+			if (p[u] > p[v]) swap(u, v);
+			p[u] += p[v]; p[v] = u;
+			return true;
+		}
+		bool same(int u, int v) { return find(u) == find(v); }
+		int find(int u) { return p[u] < 0 ? u : p[u] = find(p[u]); }
+		int usize(int u) { return -p[find(u)]; }
+	};
+
+	int kruskal(int n, int m, vector<pair<int,pair<int,int> > > &e) {
+		sort(e.begin(),e.end());
+		UF uf(n);
+		int res = 0;
+		for (int i=0; i<m; ++i) {
+			if (!uf.same(e[i].second.first, e[i].second.second)) {
+				uf.unite(e[i].second.first, e[i].second.second);
+				res += e[i].first;
+			}
+		}
+		return res;
+	}${0}
+
+snippet puri
+abbr Prim's Algorithm
+options head
+	int prim(int n, vector<pair<int,int>> e[]) {
+		priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> q;
+		bool used[n];
+		memset(used, 0, sizeof(used));
+		q.push({0,0});
+		int res = 0;
+		while (!q.empty()) {
+			int cost = q.top().first, v = q.top().second; q.pop();
+			if (used[v]) continue;
+			used[v] = true;
+			res += cost;
+			for (auto &i:e[v]) q.push({i.second, i.first});
+		}
+		return res;
+	}${0}
+
+snippet sccd
+abbr StronglyConnectedComponents Decomposition
+options head
+	// initで頂点数を指定してsccで成分分解を実行 返り値は強連結成分の個数==grpのサイズ
+	// grp[i]:i番目の強連結成分に含まれる頂点一覧
+	// cmp[i]:頂点iが属する強連結成分の番号 この番号も⇡のiもトポロジカル順
+	class SCC {
+		public:
+		static const int MV = 100100;
+		vector<vector<int> > grp; int NV,cmp[MV];
+		vector<int> E[MV], RE[MV], NUM; int vis[MV];
+		void init(int NV) { this->NV=NV; for(int i=0;i<MV;i++) { E[i].clear(); RE[i].clear();}}
+		void add(int x,int y) { E[x].push_back(y); RE[y].push_back(x); }
+		void dfs(int cu) { vis[cu]=1; for(int i=0;i<E[cu].size();i++) if(!vis[E[cu][i]]) dfs(E[cu][i]); NUM.push_back(cu); }
+		void revdfs(int cu, int ind) {vis[cu]=1; cmp[cu]=ind; grp[ind].push_back(cu);
+			for(int i=0;i<RE[cu].size();++i) if(!vis[RE[cu][i]]) revdfs(RE[cu][i],ind);}
+		int scc() {
+			int c=0; grp.clear(); grp.resize(MV); NUM.clear();
+			memset(vis,0,sizeof(vis)); for(int i=0;i<NV;i++) if(!vis[i]) dfs(i);
+			memset(vis,0,sizeof(vis)); for(int i=NUM.size()-1;i>=0;i--) if(!vis[NUM[i]])
+				{ grp[c].clear(); revdfs(NUM[i],c); sort(grp[c].begin(),grp[c].end()); c++;}
+			grp.resize(c); return c;
+		}
+	};${0}
+
+snippet wf
+abbr Warshal-Floyd
+options head
+	rep(k,n) rep(i,n) rep(j,n)
+		chmin(d[i][j], d[i][k]+d[k][j]);${0}
+
+snippet lowca
+abbr Lowest Common Ancestor
+options head
+	class LCA {
+	private:
+		static const int MAXLOGV = 20;
+		static const int MAXV = 1<<MAXLOGV;
+		int root;
+		vector<int> e[MAXV];
+		int par[MAXLOGV][MAXV], dep[MAXV];
+
+	public:
+		void dfs(int v, int p, int d) {
+			par[0][v] = p;
+			dep[v] = d;
+			for (int i=0; i<e[v].size(); i++)
+				if (e[v][i]!=p) dfs(e[v][i], v, d+1);
+		}
+		void add(int from, int to) {
+			e[from].push_back(to);
+			e[to].push_back(from);
+		}
+		void init(int N, int ROOT) {
+			root = ROOT;
+			dfs(root, -1, 0);
+			for (int k=0; k<MAXLOGV-1; k++)
+				for (int v=0; v<N; v++) {
+					if (par[k][v]<0) par[k+1][v] = -1;
+					else par[k+1][v] = par[k][par[k][v]];
+				}
+		}
+		int lca(int u, int v) {
+			if (dep[u]>dep[v]) swap(u,v);
+			for (int k=0; k<MAXLOGV; k++)
+				if ((dep[v]-dep[u])>>k&1) v = par[k][v];
+			if (u==v) return u;
+			for(int k=MAXLOGV-1; k>=0; k--)
+				if (par[k][u]!=par[k][v]) {
+					u = par[k][u];
+					v = par[k][v];
+				}
+			return par[0][u];
+		}
+	};
+
+snippet mincf
+abbr Min Cost Flow
+options head
+	const int MAXV = 4040;
+	class MCF {
+	private:
+		struct edge {int to, cap, cost, rev;};
+		vector<edge> g[MAXV];
+		int V, h[MAXV], dist[MAXV], prevv[MAXV], preve[MAXV];
+	public:
+		// fromからtoへ向かう容量capコストcostの辺をグラフに追加する
+		void add_edge(int from, int to, int cap, int cost) {
+			g[from].push_back((edge){to, cap, cost, (int)g[to].size()});
+			g[to].push_back((edge){from, 0, -cost, (int)g[from].size()-1});
+		}
+		// sからtへの流量fの最小費用流を求める (流せない場合は-1)
+		int getflow(int s, int t, int f, int n) {
+			V = n;
+			int res = 0;
+			fill(h, h+V, 0);
+			if (0<f) {
+				fill(h, h+V, 1<<30);
+				h[s] = 0;
+				while (1) {
+					bool upd = 0;
+					for (int i=0; i<V; i++) for (auto &e : g[i]) if (e.cap) {
+						if (h[i]==(1<<30)) continue;
+						if (h[e.to] > h[i]+e.cost) {
+							h[e.to] = h[i] + e.cost;
+							upd = 1;
+						}
+					}
+					if (!upd) break;
+				}
+			}
+			while (0<f) {
+				priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > que;
+				fill(dist, dist+V, 1<<30);
+				dist[s] = 0;
+				que.push({0,s});
+				while (!que.empty()) {
+					pair<int,int> p = que.top(); que.pop();
+					int v = p.second;
+					if (dist[v]<p.first) continue;
+					for (int i=0; i<g[v].size(); i++) {
+						edge &e = g[v][i];
+						if (0<e.cap && dist[e.to] > dist[v]+e.cost+h[v]-h[e.to]) {
+							dist[e.to] = dist[v] + e.cost + h[v] - h[e.to];
+							prevv[e.to] = v, preve[e.to] = i;
+							que.push({dist[e.to], e.to});
+						}
+					}
+				}
+				if (dist[t]==(1<<30)) return -1;
+				for (int v=0; v<V; v++) h[v] += dist[v];
+				int d = f;
+				for (int v=t; v!=s; v=prevv[v]) d = min(d, g[prevv[v]][preve[v]].cap);
+				f -= d;
+				res += d*h[t];
+				for (int v=t; v!=s; v=prevv[v]) {
+					edge &e = g[prevv[v]][preve[v]];
+					e.cap -= d;
+					g[v][e.rev].cap += d;
+				}
+			}
+			return res;
+		}
+	};
+
+
+
+### MATH ###
+
+snippet combi
+abbr Combination
+options head
+	const int MAXS = 10010;
+	ll fact[MAXS+1], factr[MAXS+1], inv[MAXS+1];
+	ll comb(ll n, ll r) {
+		if (fact[0]==0) {
+			fact[0] = factr[0] = inv[1] = 1;
+			for (int i=2; i<=MAXS; i++) inv[i] = inv[mod%i] * (mod-mod/i) %mod;
+			for (int i=1; i<=MAXS; i++) fact[i] = fact[i-1]*i %mod, factr[i] = factr[i-1]*inv[i] %mod;
+		}
+		if (r<0 || n<r) return 0;
+		return fact[n]*factr[r] %mod *factr[n-r] %mod;
+	}
+	ll hcomb(ll n, ll r) { return comb(n+r-1,r); }${0}
+
+snippet determ
+abbr Determinant of the square matrix
+options head
+	// 正方行列Mの行列式 O(N^3)
+	int det(mat &M) {
+		int n = M.size(), res = 1;
+		rep(i,n) {
+			reps(j,i+1,n) {
+				for (; M[j][i] != 0; res = -res) {
+					int r = M[i][i] / M[j][i];
+					reps(k, i, n) {
+						int t = M[i][k] - r * M[j][k];
+						M[i][k] = M[j][k], M[j][k] = t;
+					}
+				}
+			}
+			res *= M[i][i];
+		}
+		return res;
+	}${0}
+
+snippet divs
+abbr Divisors enumeration
+options head
+	// 約数全列挙 O(√N)
+	vector<ll> divs(ll n) {
+		vector<ll> res;
+		for (ll i = 1; i*i <= n; ++i) {
+			if (n%i==0) {
+				res.push_back(i);
+				if (i!=n/i) res.push_back(n/i);
+			}
+		}
+		return res;
+	}${0}
+
+snippet esi
+abbr Sieve of Eratosthenes
+options head
+	// エラトステネスの篩 O(NloglogN)
+	void sieve(int n) {
+		fill(ps, ps+n, 1);
+		ps[0] = ps[1] = 0;
+		for (int i = 2; i*i <= n; ++i)
+			if (ps[i]) for (int j = 2*i; j <= n; j += i) ps[j] = 0;
+	}${0}
+
+snippet facm
+abbr Prime factorization with map
+options head
+	// 素因数分解 O(√N)
+	map<ll, int> pf(ll n) {
+		map<ll, int> res;
+		for (ll i = 2; i*i <= n; i++)
+			while (n%i==0) ++res[i], n /= i;
+		if (n!=1) res[n]++;
+		return res;
+	}${0}
+
+snippet facv
+abbr Prime factorization with vector
+options head
+	// 素因数分解 O(√N)
+	vector<ll> pf(ll n) {
+		vector<ll> res;
+		for (ll i = 2; i*i <= n; i++) if (n%i==0) {
+			res.push_back(i);
+			while (n%i==0) n /= i;
+		}
+		if (n!=1) res.push_back(n);
+		return res;
+	}${0}
+
+snippet pura
+abbr Prime number check
+options head
+	// 素数判定 O(√N)
+	bool isprime(ll n) {
+		if (n==2) return 1;
+		if (n<=1 || n%2==0) return 0;
+		for (ll i=3; i*i<=n; i+=2) if (n%i==0) return 0;
+		return 1;
+	}${0}
+
+snippet matm
+abbr Matrix multiplication
+options head
+	// A*B
+	vector<vector<int> > mul(vector<vector<int> > &A, vector<vector<int> > &B) {
+		vector<vector<int> > C(A.size(), vector<int>(B[0].size()));
+		for (int i=0; i<A.size(); ++i)
+			for (int k=0; k<B.size(); ++k)
+				for (int j=0; j<B[0].size(); ++j)
+					C[i][j] = (C[i][j] + A[i][k] * B[k][j]) %mod;
+		return C;
+	}${0}
+
+snippet matp
+abbr Matrix Powering
+options head
+	// A^n
+	vector<vector<int> > pow(vector<vector<int> > A, long long n) {
+		vector<vector<int> > B(A.size(), vector<int>(A.size()));
+		for (int i=0; i<A.size(); ++i) B[i][i] = 1;
+		while (n>0) {
+			if (n&1) B = mul(B,A);
+			A = mul(A,A);
+			n >>= 1;
+		}
+		return B;
+	}${0}
+
+snippet pasu
+abbr Pascal's triangle
+options head
+	// メモ化再帰(パスカルの三角形)でnCrを求める O(NR)
+	int comb(int n, int r) {
+		if (r<0 || r>n) return 0;
+		if (r==0) return 1;
+		if (pa[n][r]) return pa[n][r];
+		return pa[n][r] = (comb(n-1, r-1) + comb(n-1, r));
+	}${0}
+
+snippet vcal
+abbr Vector calculation
+options head
+	// ベクトル演算
+	// 内積 外積 直交 平行
+	double dot(P a, P b) {return (a.real()*b.real()+a.imag()*b.imag());}
+	double cross(P a, P b) {return (a.real()*b.imag()-a.imag()*b.real());}
+	bool orth(P a1, P a2, P b1, P b2) {return deq(dot(a1-a2,b1-b2),0.0);}
+	bool para(P a1, P a2, P b1, P b2) {return deq(cross(a1-a2,b1-b2),0.0);}
+	// 点cが直線[線分]ab上にあるかどうか
+	bool pol(P a, P b, P c) {return deq(cross(b-a,c-a),0.0);}
+	bool pols(P a, P b, P c) {return (abs(a-c)+abs(c-b)<abs(a-b)+eps);}
+	// 線分a1a2と線分b1b2の交差判定
+	bool intls(P a1, P a2, P b1, P b2) {
+		return (cross(a2-a1,b1-a1)*cross(a2-a1,b2-a1)<eps)
+			   && (cross(b2-b1,a1-b1)*cross(b2-b1,a2-b1)<eps);
+	}
+	// 直線[線分]a1a2と直線[線分]b1b2の交点 (要交差判定)
+	P pintl(P a1, P a2, P b1, P b2) {
+		P a = a2-a1, b = b2-b1;
+		return a1+a*cross(b,b1-a1)/cross(b,a);
+	}
+	P pintls(P a1, P a2, P b1, P b2) {
+		P b = b2-b1;
+		double d1 = abs(cross(b,a1-b1)), d2 = abs(cross(b,a2-b1)), t = d1/(d1+d2);
+		return a1+(a2-a1)*t;
+	}
+	// 点cと直線[線分]abとの距離
+	double disl(P a, P b, P c) {return abs(cross(b-a,c-a))/abs(b-a);}
+	double disls(P a, P b, P c) {
+		if (dot(b-a,c-a)<eps) return abs(c-a);
+		if (dot(a-b,c-b)<eps) return abs(c-b);
+		return abs(cross(b-a,c-a))/abs(b-a);
+	}
+	// 線分a1a2と線分b1b2の距離
+	double dislss(P a1, P a2, P b1, P b2) {
+		if (!para(a1,a2,b1,b2) && intls(a1,a2,b1,b2)) return 0;
+		double a = min(disls(a1,a2,b1),disls(a1,a2,b2)), b = min(disls(b1,b2,a1),disls(b1,b2,a2));
+		return min(a,b);
+	}${0}
+
+
+
+### STRING ###
+
+snippet zaru
+abbr Z-algorithm
+options head
+	// 文字列SとS[i,|S|-1]の最長共通接頭辞の長さの配列をO(|S|)で構築
+	vector<int> zal(const string &s) {
+		int n = s.size();
+		vector<int> a(n);
+		a[0] = n;
+		int i = 1, j = 0;
+		while (i<n) {
+			while (i+j<n && s[j]==s[i+j]) ++j;
+			a[i] = j;
+			if (j==0) {++i; continue;}
+			int k = 1;
+			while (i+k<n && k+a[k]<j) a[i+k] =a[k], ++k;
+			i += k, j -= k;
+		}
+		return a;
+	}${0}
+
+
+
+### OTHER ###
+
+snippet convex
+abbr Convex hull trick (static)
+options head
+	template<typename V> struct CHT {
+		deque<pair<V,V>> Q;
+		int cmptype=0; // 0-max 1-min
+		V calc(pair<V,V> p, V x) {
+			return p.first*x+p.second;
+		}
+		int dodo(pair<V,V> A,pair<V,V> B, pair<V,V> C) { // max or min
+			return cmptype^((B.second-C.second)*(B.first-A.first)<=(A.second-B.second)*(C.first-B.first));
+		}
+		void add(V a, V b) { // add ax+b
+			Q.push_back({a,b});
+			int v;
+			while((v=Q.size())>=3 && dodo(Q[v-3],Q[v-2],Q[v-1]))
+				Q[v-2]=Q[v-1], Q.pop_back();
+		}
+		void add(vector<pair<V,V>> v) {
+			sort(v.begin(),v.end());
+			if(cmptype==1) reverse(v.begin(),v.end());
+			for(auto r=v.begin();r!=v.end();r++) add(r->first,r->second);
+		}
+
+
+		V query(V x) {
+			int L=-1,R=Q.size()-1;
+			while(R-L>1) {
+				int M=(L+R)/2;
+				(cmptype^((calc(Q[M],x)<=calc(Q[M+1],x)))?L:R)=M;
+			}
+			return calc(Q[R],x);
+		}
+	};
+
+snippet lis
+abbr Longest increasing subsequence
+options head
+	fill(dp, dp+n, inf);
+	rep(i,n) *lower_bound(dp, dp+n, a[i]) = a[i];
+	cout << lower_bound(dp, dp+n, inf) - dp << endl;${0}
+
+snippet modpow
+abbr Bisection powering
+options head
+	ll mpow(ll x, ll n=mod-2, ll m=mod) {
+		ll res = 1;
+		while (n>0) {
+			if (n&1) res = res * x %m;
+			x = x * x %m;
+			n >>= 1;
+		}
+		return res;
+	}${0}
+
+snippet stmod
+abbr Big number mod b
+options head
+	// オーバーフロー注意
+	int amodb(const string &a, int b) {
+		int res = 0;
+		rep(i,a.size()) res = (res*10+(a[i]-'0')) %b;
+		return res;
+	}${0}
+
