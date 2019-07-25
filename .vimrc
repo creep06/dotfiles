@@ -1,5 +1,5 @@
 if &compatible
-	set nocompatible
+    set nocompatible
 endif
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
@@ -32,6 +32,9 @@ if dein#load_state('~/.cache/dein')
 
  let g:rsenseHome = expand("/Users/kuwa/.rbenv/shims/rsence")
  let g:rsenceUseOmniFunc = 1
+
+ " Vue.js
+ call dein#add('posva/vim-vue')
 
  " いろいろ
  call dein#add('itchyny/lightline.vim') " ステータスライン強化
@@ -73,21 +76,21 @@ let g:neocomplete#enable_auto_delimiter = 1
 let g:neocomplete#auto_completion_start_length = 1
 
 if has('conceal')
-	set conceallevel=2 concealcursor=niv
+    set conceallevel=2 concealcursor=niv
 endif
 " バックスペースで補完のポップアップを閉じる
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ
 imap <expr><TAB>
-	 \ pumvisible() ? "\<C-n>" :
-	 \ neosnippet#expandable_or_jumpable() ?
-	 \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+     \ pumvisible() ? "\<C-n>" :
+     \ neosnippet#expandable_or_jumpable() ?
+     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-	 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+     \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 " エンターキーで展開
 imap <expr><CR>
-	\ (pumvisible() && neosnippet#expandable()) ?
-	\ "\<Plug>(neosnippet_expand)" : "\<CR>"
+    \ (pumvisible() && neosnippet#expandable()) ?
+    \ "\<Plug>(neosnippet_expand)" : "\<CR>"
 
 
 " スニペット保存場所
@@ -349,3 +352,16 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
   autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black    ctermbg=234
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=235
+
+" 拡張子でインデントサイズ変える
+augroup fileTypeIndent
+  autocmd!
+  autocmd FileType html setlocal ts=2 sts=2 sw=2
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType json setlocal ts=2 sts=2 sw=2
+  autocmd FileType vue setlocal ts=2 sts=2 sw=2
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2
+  autocmd FileType config setlocal ts=2 sts=2 sw=2
+  autocmd FileType markdown setlocal ts=2 sts=2 sw=2
+  autocmd FileType python setlocal ts=4 sts=4 sw=4
+augroup END
