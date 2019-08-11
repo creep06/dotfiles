@@ -36,6 +36,9 @@ if dein#load_state('~/.cache/dein')
  " Vue.js
  call dein#add('posva/vim-vue')
 
+ " blade.php
+ call dein#add('jwalton512/vim-blade')
+
  " いろいろ
  call dein#add('itchyny/lightline.vim') " ステータスライン強化
  call dein#add('bronson/vim-trailing-whitespace') " 文末の空白を強調
@@ -354,9 +357,11 @@ let g:indent_guides_auto_colors = 0
   autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=235
 
 " 拡張子でインデントサイズ変える
+autocmd BufRead,BufNewFile *.blade.php set filetype=blade
 augroup fileTypeIndent
   autocmd!
   autocmd FileType html setlocal ts=2 sts=2 sw=2
+  autocmd FileType blade setlocal ts=2 sts=2 sw=2
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2
   autocmd FileType json setlocal ts=2 sts=2 sw=2
   autocmd FileType vue setlocal ts=2 sts=2 sw=2
