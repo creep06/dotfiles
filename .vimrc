@@ -36,6 +36,12 @@ if dein#load_state('~/.cache/dein')
  " Vue.js
  call dein#add('posva/vim-vue')
 
+ " scss
+ call dein#add('cakebaker/scss-syntax.vim')
+
+ " html
+ call dein#add('mattn/emmet-vim')
+
  " blade.php
  call dein#add('jwalton512/vim-blade')
 
