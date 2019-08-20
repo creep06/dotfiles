@@ -89,6 +89,8 @@ if has('conceal')
 endif
 " バックスペースで補完のポップアップを閉じる
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" そのときに1文字消したくなかったら↓ 結構ウザいので保留
+" inoremap <silent><expr><BS> pumvisible() ? neocomplete#smart_close_popup() : "\<C-h>"
 " タブキーで補完候補の選択. スニペット内のジャンプもタブキーでジャンプ
 imap <expr><TAB>
      \ pumvisible() ? "\<C-n>" :
