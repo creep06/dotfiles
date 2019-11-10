@@ -45,6 +45,9 @@ if dein#load_state('~/.cache/dein')
  " blade.php
  call dein#add('jwalton512/vim-blade')
 
+ " typescript
+ call dein#add('leafgarland/typescript-vim')
+
  " いろいろ
  call dein#add('itchyny/lightline.vim') " ステータスライン強化
  call dein#add('bronson/vim-trailing-whitespace') " 文末の空白を強調
@@ -188,7 +191,9 @@ let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_error = '😡'
 let g:ale_sign_warning = '🤔'
 " 使うlinterの選択
-let g:ale_linters = {'cpp': ['gcc'], 'python': ['flake8'], 'javascript': ['eslint']}
+let g:ale_linters = {'cpp': ['gcc'], 'python': ['flake8'], 'javascript': ['eslint'], 'typescript': ['tsserver']}
+" tslintは入力中にlintしてくれないから非推奨らしい
+let g:ale_linters_ignore = {'typescript': ['tslint']}
 " ↑で指定したlinter以外を勝手に使わないようにする
 let g:ale_linters_explicit = 1
 " gccのオプション
@@ -366,11 +371,13 @@ let g:indent_guides_auto_colors = 0
 
 " 拡張子でインデントサイズ変える
 autocmd BufRead,BufNewFile *.blade.php set filetype=blade
+autocmd BufRead,BufNewFile *.ts set filetype=typescript
 augroup fileTypeIndent
   autocmd!
   autocmd FileType html setlocal ts=2 sts=2 sw=2
   autocmd FileType blade setlocal ts=2 sts=2 sw=2
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType typescript setlocal ts=2 sts=2 sw=2
   autocmd FileType json setlocal ts=2 sts=2 sw=2
   autocmd FileType vue setlocal ts=2 sts=2 sw=2
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2
